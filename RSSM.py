@@ -26,7 +26,7 @@ class RSSM(nn.Module):
 
     def split_stats(self,stats):
         mu,raw_std=stats.chunk(2,dim=-1)
-        sigma=F.softplus(raw_std)+self.min_std
+        sigma=F.softplus(raw_std)+self.min_std                              #Softplus=log(1+exp(x))
         return mu,sigma
 
     def obs_step(self,h_prev,a_prev,s_prev,obs_embed):

@@ -3,7 +3,7 @@ import torch.nn.functional as F
 import torch.nn as nn
 
 class RewardHead(nn.Module):
-    def __init__(self,latent_dim=288,hidden_dim=200,obs_dim=3):
+    def __init__(self,latent_dim=288,hidden_dim=200):
         super(RewardHead, self).__init__()
 
         self.fc1=nn.Linear(latent_dim,hidden_dim)
